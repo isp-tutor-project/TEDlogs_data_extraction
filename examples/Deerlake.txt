@@ -1,0 +1,180 @@
+(venv) ckotz-imak:process_study1_logs ckot$ unzip EdForge_MERGEMASTER_json\ files.zip 
+
+Archive:  EdForge_MERGEMASTER_json files.zip
+  inflating: EdForge_MERGEMASTER_json files/isp_userdata.json  
+  inflating: EdForge_MERGEMASTER_json files/.DS_Store  
+  inflating: EdForge_MERGEMASTER_json files/VICTORIAHA_MAY_2/tutorstate_DEDR.json  
+  inflating: EdForge_MERGEMASTER_json files/VICTORIAHA_MAY_2/tutorstate_RQTED.json  
+  inflating: EdForge_MERGEMASTER_json files/VICTORIAHA_MAY_2/tutorstate_MATS.json  
+  inflating: EdForge_MERGEMASTER_json files/VICTORIAHA_MAY_2/DR_DEERLAKE/SScene2_1.json  
+ 
+  <snip> removed > 5500 lines of output for your viewing pleasure </snip>
+
+  inflating: EdForge_MERGEMASTER_json files/TIMOTHYPI_MAY_8/TED_DEERLAKE/SScene8_1.json  
+  inflating: EdForge_MERGEMASTER_json files/TIMOTHYPI_MAY_8/TED_DEERLAKE/SScene9_1.json  
+  inflating: EdForge_MERGEMASTER_json files/TIMOTHYPI_MAY_8/TED_DEERLAKE/SScene8_2.json  
+  inflating: EdForge_MERGEMASTER_json files/TYLERBI_FEB_7/tutorstate_MATS.json  
+  inflating: EdForge_MERGEMASTER_json files/TIMOTHYPI_MAY_8/TED_DEERLAKE/SScene9_2.json  
+  inflating: EdForge_MERGEMASTER_json files/TYLERBI_FEB_7/tutorstate_DEDR.json  
+  inflating: EdForge_MERGEMASTER_json files/TYLERBI_FEB_7/tutorstate_RQTED.json  
+
+(venv) ckotz-imak:process_study1_logs ckot$ mv EdForge_MERGEMASTER_json\ files Deerlake_files
+
+(venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py collect-logs -t scene -i "Deerlake_files/*/TED_DEERLAKE/SScene1_1.json"
+
+(venv) ckotz-imak:process_study1_logs ckot$ ls Deerlake_logs
+
+ABIGAILAS_DEC_13.SScene1_1.json		ETHANAL_SEP_7.SScene1_1.json		  MACKWI_DEC_20.SScene1_1.json
+ABIGAILAT_JUN_9.SScene1_1.json		EVANMU_SEP_26.SScene1_1.json		  MADISONBR_JUN_26.SScene1_1.json
+ABIGAILTH_MAR_7.SScene1_1.json		FA_SEP_29.SScene1_1.json		      MADISONKE_MAR_9.SScene1_1.json
+ALEXISLO_AUG_2.SScene1_1.json		  FRANCESCASA_JUL_7.SScene1_1.json	MARIAWA_SEP_14.SScene1_1.json
+ALEXMC_OCT_12.SScene1_1.json		  GABRIELDA_JAN_28.SScene1_1.json		MEGANYO_JUN_1.SScene1_1.json
+ALIVIAAD_JUN_27.SScene1_1.json		GENEVIEVEZA_JAN_1.SScene1_1.json	MORGANCO_MAR_31.SScene1_1.json
+ALTONCA_JUN_14.SScene1_1.json		  GIANNAAL_JUL_3.SScene1_1.json		  NATALINATR_JAN_2.SScene1_1.json
+ANNAHL_JAN_25.SScene1_1.json		  ISABELLABO_MAR_21.SScene1_1.json	NICHOLASBE_MAY_30.SScene1_1.json
+ANTHONYDI_MAR_30.SScene1_1.json		JACKCR_FEB_12.SScene1_1.json		  NICHOLASFR_JUN_16.SScene1_1.json
+AUSTINME_DEC_14.SScene1_1.json		JACOBTO_OCT_19.SScene1_1.json		  NICOLASRO_SEP_19.SScene1_1.json
+AVAHA_JAN_25.SScene1_1.json		    JADEN_OCT_11.SScene1_1.json		    PAIGEAT_DEC_10.SScene1_1.json
+BELLADA_JUN_12.SScene1_1.json		  JADYNKU_APR_11.SScene1_1.json		  PAIGEWA_JUN_13.SScene1_1.json
+BRANDONBO_MAY_11.SScene1_1.json		JAMESMC_DEC_16.SScene1_1.json		  PAYTONCE_MAR_2.SScene1_1.json
+BRENDANGE_OCT_12.SScene1_1.json		JAREDYO_AUG_25.SScene1_1.json		  RYANDU_SEP_11.SScene1_1.json
+BRIENNESH_JAN_2.SScene1_1.json		JAYNASC_APR_21.SScene1_1.json		  RYDERTA_JUL_10.SScene1_1.json
+BRITTNEYSC_MAR_11.SScene1_1.json	JILLIANOR_DEC_18.SScene1_1.json		SAMANTHADI_MAY_27.SScene1_1.json
+BROOKEKO_JAN_20.SScene1_1.json		JOSEPHKU_JAN_22.SScene1_1.json		SAMUELTR_AUG_4.SScene1_1.json
+CALEIGHKE_FEB_17.SScene1_1.json		JULIABO_FEB_10.SScene1_1.json		  TAYLORPE_MAY_4.SScene1_1.json
+CAMERONEI_JAN_25.SScene1_1.json		KAITLYNLO_JUN_5.SScene1_1.json		TIMOTHYPI_MAY_8.SScene1_1.json
+CAMERONME_APR_12.SScene1_1.json		KENDRABA_APR_28.SScene1_1.json		VICTORIAHA_MAY_2.SScene1_1.json
+CAROLYNMC_APR_19.SScene1_1.json		KILEYBI_MAY_5.SScene1_1.json		  VICTORIAHO_DEC_14.SScene1_1.json
+CIARAOL_AUG_7.SScene1_1.json		  KYLIEMC_JAN_15.SScene1_1.json		  VINCENTRU_MAR_4.SScene1_1.json
+DANIELMC_JUL_12.SScene1_1.json		LAYLAHMI_DEC_28.SScene1_1.json		WAYNELO_MAY_10.SScene1_1.json
+DEIRDRECL_JUN_7.SScene1_1.json		LEAHLY_FEB_17.SScene1_1.json		  ZACHARYBE_MAY_13.SScene1_1.json
+ELIOTBE_MAR_3.SScene1_1.json		  LEVITA_MAR_22.SScene1_1.json		  ZACHARYBU_AUG_11.SScene1_1.json
+EMILYBL_MAR_8.SScene1_1.json		  LILYDU_NOV_28.SScene1_1.json		  ZACHARYKN_AUG_30.SScene1_1.json
+EMILYMC_AUG_13.SScene1_1.json		  LOGANDA_APR_12.SScene1_1.json		  ZACHKR_SEP_9.SScene1_1.json
+EMMALIECR_MAY_1.SScene1_1.json		LOGANLA_JUL_6.SScene1_1.json		  ZACHSA_OCT_5.SScene1_1.json
+ERICKU_JAN_2.SScene1_1.json		    MACKENZIEBU_JAN_7.SScene1_1.json
+
+(venv) ckotz-imak:process_study1_logs ckot$ ls  Deerlake_files/ABIGAILAS_DEC_13/
+
+.DS_Store              MATSPRE_DEERLAKE/      TED_DEERLAKE/          tutorstate_MATS.json   
+DR_DEERLAKE/           RQSELECT_DEERLAKE/     tutorstate_DEDR.json   tutorstate_RQTED.json  
+
+(venv) ckotz-imak:process_study1_logs ckot$ ls Deerlake_files/ABIGAILAS_DEC_13
+
+DR_DEERLAKE		RQSELECT_DEERLAKE	tutorstate_DEDR.json	tutorstate_RQTED.json
+MATSPRE_DEERLAKE	TED_DEERLAKE		tutorstate_MATS.json
+
+(venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py collect-logs -t tutor-state -i "Deerlake_files/*/tutorstate_RQTED.json"
+
+(venv) ckotz-imak:process_study1_logs ckot$ ls Deerlake_logs
+
+ABIGAILAS_DEC_13.SScene1_1.json			      JAMESMC_DEC_16.SScene1_1.json
+ABIGAILAS_DEC_13.tutor-state.json		      JAMESMC_DEC_16.tutor-state.json
+ABIGAILAT_JUN_9.SScene1_1.json			      JAREDYO_AUG_25.SScene1_1.json
+ABIGAILAT_JUN_9.tutor-state.json		      JAREDYO_AUG_25.tutor-state.json
+ABIGAILTH_MAR_7.SScene1_1.json			      JASONCA_JAN_1.tutor-state.json
+ABIGAILTH_MAR_7.tutor-state.json		      JAYNASC_APR_21.SScene1_1.json
+ADAMSC_MAR_21.tutor-state.json			      JAYNASC_APR_21.tutor-state.json
+ADENES_JUL_13.tutor-state.json			      JEFFREYMI_JAN_15.tutor-state.json
+AIDENFL_SEP_6.tutor-state.json			      JILLIANOR_DEC_18.SScene1_1.json
+ALEXISBISH_OCT_3.tutor-state.json		      JILLIANOR_DEC_18.tutor-state.json
+ALEXISLO_AUG_2.SScene1_1.json			        JOEYCR_DEC_24.tutor-state.json
+ALEXISLO_AUG_2.tutor-state.json			      JOSEPHKU_JAN_22.SScene1_1.json
+ALEXMC_OCT_12.SScene1_1.json			        JOSEPHKU_JAN_22.tutor-state.json
+ALEXMC_OCT_12.tutor-state.json			      JULIABO_FEB_10.SScene1_1.json
+ALIVIAAD_JUN_27.SScene1_1.json			      JULIABO_FEB_10.tutor-state.json
+ALIVIAAD_JUN_27.tutor-state.json		      KAILEYME_DEC_24.tutor-state.json
+ALTONCA_JUN_14.SScene1_1.json			        KAITLYNLO_JUN_5.SScene1_1.json
+ALTONCA_JUN_14.tutor-state.json			      KAITLYNLO_JUN_5.tutor-state.json
+ANGELOTR_JAN_2.tutor-state.json			      KENDRABA_APR_28.SScene1_1.json
+ANNAFU_OCT_12.tutor-state.json			      KENDRABA_APR_28.tutor-state.json
+ANNAHL_JAN_25.SScene1_1.json			        KILEYBI_MAY_5.SScene1_1.json
+ANNAHL_JAN_25.tutor-state.json			      KILEYBI_MAY_5.tutor-state.json
+ANTHONYBE_MAY_13.tutor-state.json		      KYLIEMC_JAN_15.SScene1_1.json
+ANTHONYDI_MAR_30.SScene1_1.json			      KYLIEMC_JAN_15.tutor-state.json
+ANTHONYDI_MAR_30.tutor-state.json		      LANEYBE_JAN_1.tutor-state.json
+AUSTINME_DEC_14.SScene1_1.json			      LAYLAHMI_DEC_28.SScene1_1.json
+AUSTINME_DEC_14.tutor-state.json		      LAYLAHMI_DEC_28.tutor-state.json
+AVAHA_JAN_25.SScene1_1.json			          LEAHLY_FEB_17.SScene1_1.json
+AVAHA_JAN_25.tutor-state.json			        LEAHLY_FEB_17.tutor-state.json
+AVALA_MAR_31.tutor-state.json			        LEVITA_MAR_22.SScene1_1.json
+AVERYRE_MAR_3.tutor-state.json			      LEVITA_MAR_22.tutor-state.json
+AYDENST_APR_12.tutor-state.json			      LILLEYAU_JUL_17.tutor-state.json
+BELLADA_JUN_12.SScene1_1.json			        LILYDU_NOV_28.SScene1_1.json
+BELLADA_JUN_12.tutor-state.json			      LILYDU_NOV_28.tutor-state.json
+BRANDONBO_MAY_11.SScene1_1.json			      LOGANDA_APR_12.SScene1_1.json
+BRANDONBO_MAY_11.tutor-state.json		      LOGANDA_APR_12.tutor-state.json
+BRENDANGE_OCT_12.SScene1_1.json			      LOGANLA_JUL_6.SScene1_1.json
+BRENDANGE_OCT_12.tutor-state.json		      LOGANLA_JUL_6.tutor-state.json
+BRIENNESH_JAN_2.SScene1_1.json			      MACKENZIEBU_JAN_7.SScene1_1.json
+BRIENNESH_JAN_2.tutor-state.json		      MACKENZIEBU_JAN_7.tutor-state.json
+BRITTNEYSC_MAR_11.SScene1_1.json		      MACKWI_DEC_20.SScene1_1.json
+BRITTNEYSC_MAR_11.tutor-state.json        MACKWI_DEC_20.tutor-state.json
+BROOKEDI_APR_26.tutor-state.json		      MADISONBR_JUN_26.SScene1_1.json
+BROOKEKO_JAN_20.SScene1_1.json			      MADISONBR_JUN_26.tutor-state.json
+BROOKEKO_JAN_20.tutor-state.json		      MADISONKE_MAR_9.SScene1_1.json
+BROOKEYU_JUN_11.tutor-state.json		      MADISONKE_MAR_9.tutor-state.json
+CALEBKE_FEB_17.tutor-state.json			      MADISONSA_OCT_11.tutor-state.json
+CALEIGHKE_FEB_17.SScene1_1.json			      MADISONWI_DEC_25.tutor-state.json
+CALEIGHKE_FEB_17.tutor-state.json		      MARIAWA_SEP_14.SScene1_1.json
+CAMERONEI_JAN_25.SScene1_1.json			      MARIAWA_SEP_14.tutor-state.json
+CAMERONEI_JAN_25.tutor-state.json		      MCKENZIEHO_APR_18.tutor-state.json
+CAMERONME_APR_12.SScene1_1.json			      MEGANYO_JUN_1.SScene1_1.json
+CAMERONME_APR_12.tutor-state.json		      MEGANYO_JUN_1.tutor-state.json
+CAROLYNMC_APR_19.SScene1_1.json			      MORGANCO_MAR_31.SScene1_1.json
+CAROLYNMC_APR_19.tutor-state.json		      MORGANCO_MAR_31.tutor-state.json
+CIARAOL_AUG_7.SScene1_1.json			        NATALINATR_JAN_2.SScene1_1.json
+CIARAOL_AUG_7.tutor-state.json			      NATALINATR_JAN_2.tutor-state.json
+CIARATI_OCT_16.tutor-state.json			      NICHOLASBE_MAY_30.SScene1_1.json
+COLINMA_APR_15.tutor-state.json			      NICHOLASBE_MAY_30.tutor-state.json
+COURTNEYOR_DEC_30.tutor-state.json	      NICHOLASDE_JUN_18.tutor-state.json
+DAKOTAWI_JUN_9.tutor-state.json			      NICHOLASFR_JUN_16.SScene1_1.json
+DANIELMC_JUL_12.SScene1_1.json			      NICHOLASFR_JUN_16.tutor-state.json
+DANIELMC_JUL_12.tutor-state.json		      NICOLASRO_SEP_19.SScene1_1.json
+DAVIDGRONDWALSKI_DEC_10.tutor-state.json	NICOLASRO_SEP_19.tutor-state.json
+DEIRDRECL_JUN_7.SScene1_1.json			      NOAHCO_FEB_5.tutor-state.json
+DEIRDRECL_JUN_7.tutor-state.json		      PAIGEAT_DEC_10.SScene1_1.json
+DEREKBU_SEP_4.tutor-state.json			      PAIGEAT_DEC_10.tutor-state.json
+ELIASHU_NOV_26.tutor-state.json			      PAIGEWA_JUN_13.SScene1_1.json
+ELIOTBE_MAR_3.SScene1_1.json			        PAIGEWA_JUN_13.tutor-state.json
+ELIOTBE_MAR_3.tutor-state.json			      PAYTONCE_MAR_2.SScene1_1.json
+ELIZABETHKN_SEP_28.tutor-state.json		    PAYTONCE_MAR_2.tutor-state.json
+EMILYBL_MAR_8.SScene1_1.json			        RYANCO_MAR_23.tutor-state.json
+EMILYBL_MAR_8.tutor-state.json			      RYANDU_SEP_11.SScene1_1.json
+EMILYMC_AUG_13.SScene1_1.json			        RYANDU_SEP_11.tutor-state.json
+EMILYMC_AUG_13.tutor-state.json			      RYDERTA_JUL_10.SScene1_1.json
+EMMALIECR_MAY_1.SScene1_1.json			      RYDERTA_JUL_10.tutor-state.json
+EMMALIECR_MAY_1.tutor-state.json		      RYLEEGR_SEP_21.tutor-state.json
+ERICKU_JAN_2.SScene1_1.json			          SAMANTHADI_MAY_27.SScene1_1.json
+ERICKU_JAN_2.tutor-state.json			        SAMANTHADI_MAY_27.tutor-state.json
+ETHANAL_SEP_7.SScene1_1.json			        SAMUELTR_AUG_4.SScene1_1.json
+ETHANAL_SEP_7.tutor-state.json			      SAMUELTR_AUG_4.tutor-state.json
+EVANMU_SEP_26.SScene1_1.json			        SERENASI_JUN_20.tutor-state.json
+EVANMU_SEP_26.tutor-state.json			      TANNERHA_OCT_1.tutor-state.json
+FA_SEP_29.SScene1_1.json			            TAYLORPE_MAY_4.SScene1_1.json
+FA_SEP_29.tutor-state.json			          TAYLORPE_MAY_4.tutor-state.json
+FRANCESCASA_JUL_7.SScene1_1.json		      TIMOTHYPI_MAY_8.SScene1_1.json
+FRANCESCASA_JUL_7.tutor-state.json		    TIMOTHYPI_MAY_8.tutor-state.json
+GABRIELDA_JAN_28.SScene1_1.json			      TYLERBI_FEB_7.tutor-state.json
+GABRIELDA_JAN_28.tutor-state.json		      VICTORIAHA_MAY_2.SScene1_1.json
+GENEVIEVEZA_JAN_1.SScene1_1.json		      VICTORIAHA_MAY_2.tutor-state.json
+GENEVIEVEZA_JAN_1.tutor-state.json		    VICTORIAHO_DEC_14.SScene1_1.json
+GIANNAAL_JUL_3.SScene1_1.json			        VICTORIAHO_DEC_14.tutor-state.json
+GIANNAAL_JUL_3.tutor-state.json			      VINCENTRU_MAR_4.SScene1_1.json
+GRAHAMWA_SEP_9.tutor-state.json			      VINCENTRU_MAR_4.tutor-state.json
+ISABELLABO_MAR_21.SScene1_1.json		      WAYNELO_MAY_10.SScene1_1.json
+ISABELLABO_MAR_21.tutor-state.json		    WAYNELO_MAY_10.tutor-state.json
+JACKCR_FEB_12.SScene1_1.json			        XANDERBA_OCT_19.tutor-state.json
+JACKCR_FEB_12.tutor-state.json			      ZACHARYBE_MAY_13.SScene1_1.json
+JACKSONWA_AUG_12.tutor-state.json		      ZACHARYBE_MAY_13.tutor-state.json
+JACKZA_JUN_5.tutor-state.json			        ZACHARYBU_AUG_11.SScene1_1.json
+JACOBTO_OCT_19.SScene1_1.json			        ZACHARYBU_AUG_11.tutor-state.json
+JACOBTO_OCT_19.tutor-state.json			      ZACHARYKN_AUG_30.SScene1_1.json
+JADEN_OCT_11.SScene1_1.json			          ZACHARYKN_AUG_30.tutor-state.json
+JADEN_OCT_11.tutor-state.json			        ZACHKR_SEP_9.SScene1_1.json
+JADYNKU_APR_11.SScene1_1.json			        ZACHKR_SEP_9.tutor-state.json
+JADYNKU_APR_11.tutor-state.json			      ZACHSA_OCT_5.SScene1_1.json
+JAHLASI_AUG_1.tutor-state.json			      ZACHSA_OCT_5.tutor-state.json
+
+(venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py list-non-matching -d Deerlake_logs
+

@@ -178,3 +178,7 @@ JAHLASI_AUG_1.tutor-state.json			      ZACHSA_OCT_5.tutor-state.json
 
 (venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py list-non-matching -d Deerlake_logs
 
+(venv) ckotz-imak:process_study1_logs ckot$ python createExcelFile.py SciTGr6_Study1_logs
+
+excel file saved at Deerlake_logs/Deerlake.xlsx
+NOTE: A list of usernames missing the required data have been saved to Deerlake_logs/students_missing_data.txt

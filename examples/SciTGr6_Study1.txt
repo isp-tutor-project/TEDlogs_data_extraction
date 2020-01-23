@@ -11,46 +11,7 @@ Archive:  All_TED_LOGS_SciTGr6_Study1_tutorstate.zip
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/BENJAMINMO_SEP_8_TEDtutor_state.json  
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CCHRISSM_NOV_24_TEDtutor_state.json  
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CHANCEWO_DEC_21_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CHEDA_DEC_19_TED.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CHRISTIANHA_OCT_3_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CHRISTINAOL_DEC_21_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CHRISTOPHERWI_JUL_1_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/DAVAYHAPA_JUN_28_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/DELANEYPU_APR_5_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/CURTISMO_GUESTNC_JAN_1_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/desktop.ini  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/ELIJAHFL_FEB_5_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/DEVINPA_AUG_2_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/ELIWI_GUESTC_JAN_1_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/ELLISWA_GUESTC_JAN_2_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/ERIKARI_JUN_27_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/EVENE_GUESTC_JAN_1_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/GODSONformerlyJEREMIAH_GUESTNC_JAN_2_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/GRETALE_MAY_27_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/GUESTC_JAN_1_ELIWI_and_EVENE_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/GUESTBL_JAN_1_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/GUESTNC_JAN_2_MADISONTU_and_JEREMIAH_TED_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/IBRAHIMJA_MAR_18_TED_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JAELYNNGA_FEB_3_TED_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/IVANMA_MAR_22_TED_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JAIDENAG_AUG_23_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JAYDENBA_SEP_13_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JAYLAAN_OCT_6_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JEREMIAHformerlyGODSON_GUESTNC_JAN_1_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JOSEPHTH_NOV_27_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JORDYNEL_SEP_23_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JOSHUAKO_JUN_19_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JULIANMI_OCT_27_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/KEYONBR_OCT_5_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/JULICIACO_GUESTNC_JAN_3_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/KIYOSHIMU_FEB_3_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/KYLIERO_AUG_27_TED_tutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/LACHLANHA_APR_8_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/LUCIANMI_OCT_27_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/LOGANWH_AUG_17_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/MADISONTU_GUESTNC_JAN_2_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/MICHELLEKO_JUN_9_TEDtutor_state.json  
-  inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/PARISDO_JAN_17_TEDtutor_state.json  
+    <snip> ~ 40 lines deleted for your viewing pleasure </snip>
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/Procedure for Converting to excel.txt  
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/ROCCODO_DEC_28_TEDtutor_state.json  
   inflating: All_TED_LOGS_SciTGr6_Study1_tutorstate/SKYANNAR_FEB_27_TEDtutor_state.json  
@@ -74,3 +35,7 @@ SciTGr6_Study1_logs/CHEDA_DEC_19_TED.json
 (venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py rename --find '_TED.json' --replace '.tutor-state.json' -d SciTGr6_Study1_logs 
 
 (venv) ckotz-imak:process_study1_logs ckot$ python prepareLogs.py list-non-matching -d SciTGr6_Study1_logs
+
+(venv) ckotz-imak:process_study1_logs ckot$ python createExcelFile.py SciTGr6_Study1_logs
+
+excel file saved at SciTGr6_Study1_logs/SciTGr6_Study1.xlsx

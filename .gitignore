@@ -7,6 +7,10 @@
 # zip files
 *.zip
 
+# log files
+*_logs
+*_files
+
 # js stuff
 node_modules/
 

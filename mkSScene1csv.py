@@ -9,64 +9,11 @@ import sys
 
 import xlsxwriter
 
-FILE_NAME_RE = re.compile(r'^(\w+)\.TED_tutor_state.json$')
+TUTOR_STATE_FILE_NAME_RE = re.compile(r'^(\w+)\.tutor-state.json$')
+SSCENE1_FILE_NAME_RE = re.compile(r'^(\w+)\.SScene1_1.json$')
+FILE_NAME_RE = re.compile(r^(\w+))\.(?:tutor-state|SScene1_1)\.json$')
 
-def dump_simplified_json(scene1_seq, module_seq, path):
-    print(path)
-    indent = ""
-    txt = "{\n"
-    indent = 4 * " "
-    txt += '%s"scene.SScene1.$seq": [\n' % indent
-    indent = 8 * " "
-    for rec in scene1_seq:
-        txt += "%s%s,\n" % (indent, json.dumps(rec))
-    txt = txt.rstrip(',\n')
-    txt += '\n'
-    indent = 4 * " "
-    txt += "%s],\n" % indent
-    txt += '%s"module.EFMod_TEDInstr.$seq": [\n' % indent
-    indent = 8 * " "
-    for rec in module_seq:
-        value = rec.get('value')
-        if isinstance(value, (dict, list)):
-            val = json.dumps(value, indent=4)
-            lines = val.rstrip().split('\n')
-            nested_indent = "    " + indent
-            txt += '%s{\n' % indent
-            txt += '%s"prop": "%s",\n' % (nested_indent, rec.get('prop'))
-            txt += '%s"time": %d,\n' % (nested_indent, rec.get('time'))
-            if isinstance(value, (dict)):
-                txt += '%s"value": {\n' % nested_indent
-            else:
-                txt += '%s"value": [\n' % nested_indent
-            for line in lines[1:-1]:
-                txt += "%s%s\n" % (nested_indent, line)
-            txt = txt.rstrip(',\n')
-            txt += '\n'
-            if isinstance(value, (dict)):
-                txt += '%s}\n' % nested_indent
-            else:
-                txt += '%s]\n' % nested_indent
-            txt += "%s},\n" % indent
-        else:
-            txt += "%s%s,\n" % (indent, json.dumps(rec))
-    txt = txt.rstrip(',\n')
-    txt += '\n'
-    indent = 4 * " "
-    txt += "%s]\n}\n" % indent
-    # print(txt)
-    sanity_check = json.loads(txt)
-    with open(path, "w") as fh:
-        fh.write(txt)
 
-def dump_csv(obj, path):
-    print("writing %s" % path)
-    field_names = ['time', 'prop', 'value']
-    with open(path, "w") as fh:
-        writer = csv.DictWriter(fh, fieldnames=field_names, quoting=csv.QUOTE_NONNUMERIC)
-        writer.writeheader()
-        for rec in obj:
-            writer.writerow(rec)
 
 def filter_recs1(recs):
     filtered = []
@@ -80,6 +27,7 @@ def filter_recs1(recs):
             continue
         filtered.append(rec)
     return filtered
+
 
 def filter_recs2(recs):
     filtered = []
@@ -97,6 +45,8 @@ def filter_recs2(recs):
         filtered.append(rec)
     return filtered
 
+
+
 def filter_recs3(recs):
     filtered = []
     prev_prop = ""
@@ -110,7 +60,80 @@ def filter_recs3(recs):
         filtered.append(rec)
     return filtered
 
-def dump_csv_simplified(recs, path):
+
+def read_csv(file_name):
+    # reader = None
+    rows = []
+    with open(file_name, "r") as infh:
+        reader = csv.DictReader(infh)
+        for i, row in enumerate(reader):
+            rows.append((i+2, dict(row)))
+    return rows
+
+# def dump_json(obj, path):
+#     with open(path, 'w') as fh:
+#         json.dump(obj, fh, indent=4)
+
+# def dump_simplified_json(scene1_seq, module_seq, path):
+#     print(path)
+#     indent = ""
+#     txt = "{\n"
+#     indent = 4 * " "
+#     txt += '%s"scene.SScene1.$seq": [\n' % indent
+#     indent = 8 * " "
+#     for rec in scene1_seq:
+#         txt += "%s%s,\n" % (indent, json.dumps(rec))
+#     txt = txt.rstrip(',\n')
+#     txt += '\n'
+#     indent = 4 * " "
+#     txt += "%s],\n" % indent
+#     txt += '%s"module.EFMod_TEDInstr.$seq": [\n' % indent
+#     indent = 8 * " "
+#     for rec in module_seq:
+#         value = rec.get('value')
+#         if isinstance(value, (dict, list)):
+#             val = json.dumps(value, indent=4)
+#             lines = val.rstrip().split('\n')
+#             nested_indent = "    " + indent
+#             txt += '%s{\n' % indent
+#             txt += '%s"prop": "%s",\n' % (nested_indent, rec.get('prop'))
+#             txt += '%s"time": %d,\n' % (nested_indent, rec.get('time'))
+#             if isinstance(value, (dict)):
+#                 txt += '%s"value": {\n' % nested_indent
+#             else:
+#                 txt += '%s"value": [\n' % nested_indent
+#             for line in lines[1:-1]:
+#                 txt += "%s%s\n" % (nested_indent, line)
+#             txt = txt.rstrip(',\n')
+#             txt += '\n'
+#             if isinstance(value, (dict)):
+#                 txt += '%s}\n' % nested_indent
+#             else:
+#                 txt += '%s]\n' % nested_indent
+#             txt += "%s},\n" % indent
+#         else:
+#             txt += "%s%s,\n" % (indent, json.dumps(rec))
+#     txt = txt.rstrip(',\n')
+#     txt += '\n'
+#     indent = 4 * " "
+#     txt += "%s]\n}\n" % indent
+#     # print(txt)
+#     sanity_check = json.loads(txt)
+#     with open(path, "w") as fh:
+#         fh.write(txt)
+
+
+def dump_csv(obj, path):
+    # print("writing %s" % path)
+    field_names = ['time', 'prop', 'value']
+    with open(path, "w") as fh:
+        writer = csv.DictWriter(fh, fieldnames=field_names, quoting=csv.QUOTE_NONNUMERIC)
+        writer.writeheader()
+        for rec in obj:
+            writer.writerow(rec)
+
+
+def dump_simplified_csv(recs, path):
     # print("writing %s" % path)
     field_names = ['time', 'prop', 'value']
     filtered1 = filter_recs1(recs)
@@ -123,7 +146,7 @@ def dump_csv_simplified(recs, path):
             writer.writerow(rec)
 
 def analyze_simplified_csv(orig, new_file):
-    print(new_file)
+    # print(new_file)
     with open(orig, "r") as infh:
         reader = csv.DictReader(infh)
         currentRow = None
@@ -204,75 +227,62 @@ def analyze_simplified_csv(orig, new_file):
             writer.writeheader()
             for rec in recs:
                 writer.writerow(rec)
-            
-        # print(json.dumps(rows, indent=4))
+   
 
-def dump_json(obj, path):
-    with open(path, 'w') as fh:
-        json.dump(obj, fh, indent=4)
-
-def merge_seqs(scene1_seqs, module_seqs, file_name):
-    print(file_name)
-    records = []
-    for i, rec in enumerate(scene1_seqs):
-        obj = {
-            "time": rec.pop('time'),
-            "path": "scene.SScene1.$seq[%03d]" % i,
-            "data": json.dumps(rec)
-        }
-        records.append(obj)
-    for i, rec in enumerate(module_seqs):
-        obj = {
-            "time": rec.pop('time'),
-            "path": "module.EFMod_TEDInstr.$seq[%03d]" % i,
-            "data": json.dumps(rec)
-        }
-        records.append(obj)
-    records.sort(key=lambda x: x['path'])
-    records.sort(key=lambda x: x['time'])
-    fields = ["time", "path", "data"]
-    with open(file_name, "w") as outfh:
-        writer = csv.DictWriter(outfh, fieldnames=fields, quoting=csv.QUOTE_NONNUMERIC)
-        writer.writeheader()
-        for rec in records:
-            writer.writerow(rec)
+# def merge_seqs(scene1_seqs, module_seqs, file_name):
+#     print(file_name)
+#     records = []
+#     for i, rec in enumerate(scene1_seqs):
+#         obj = {
+#             "time": rec.pop('time'),
+#             "path": "scene.SScene1.$seq[%03d]" % i,
+#             "data": json.dumps(rec)
+#         }
+#         records.append(obj)
+#     for i, rec in enumerate(module_seqs):
+#         obj = {
+#             "time": rec.pop('time'),
+#             "path": "module.EFMod_TEDInstr.$seq[%03d]" % i,
+#             "data": json.dumps(rec)
+#         }
+#         records.append(obj)
+#     records.sort(key=lambda x: x['path'])
+#     records.sort(key=lambda x: x['time'])
+#     fields = ["time", "path", "data"]
+#     with open(file_name, "w") as outfh:
+#         writer = csv.DictWriter(outfh, fieldnames=fields, quoting=csv.QUOTE_NONNUMERIC)
+#         writer.writeheader()
+#         for rec in records:
+#             writer.writerow(rec)
 
 SSCENE1_SEQ_CSV_RE = re.compile(r'^(\w+)\.SScene1_seq\.csv$')
 SSCENE1_SEQ_ANALYZED_RE = re.compile(r'^(\w+)\.SScene1_seq\.simplified_csv\.analyzed\.csv$')
 
-def read_csv(file_name):
-    # reader = None
-    rows = []
-    with open(file_name, "r") as infh:
-        reader = csv.DictReader(infh)
-        for i, row in enumerate(reader):
-            rows.append((i+2, dict(row)))
-    return rows
 
-def mk_scene1_excel_file(path, csv_files):
-    # print(csv_files)
-    wb = xlsxwriter.Workbook(os.path.join(path,'SScene1_seqs.xlsx'))
-    bold = wb.add_format({'bold': True})
-    ws = wb.add_worksheet()
-    # write header
-    ws.write('A1', 'Student')
-    ws.write('B1', 'Time', bold)
-    ws.write('C1', 'Prop', bold)
-    ws.write('D1', 'Value', bold)
-    start_row = 0
-    for csv_file in sorted(csv_files):
-        mat = SSCENE1_SEQ_CSV_RE.match(csv_file)
-        if mat is None:
-            raise Exception("no match %s" % csv_file)
-        student = mat.group(1)
-        ws_data = read_csv(os.path.join(path, csv_file))
-        for (row_num, row_data) in ws_data:
-            ws.write('A%d' % (row_num + start_row), student)
-            ws.write('B%d' % (row_num + start_row), row_data['time'])
-            ws.write('C%d' % (row_num + start_row), row_data['prop'])
-            ws.write('D%d' % (row_num + start_row), row_data['value'])
-        start_row += len(ws_data) + 1
-    wb.close()
+# def mk_scene1_excel_file(path, csv_files):
+#     # print(csv_files)
+#     wb = xlsxwriter.Workbook(os.path.join(path,'SScene1_seqs.xlsx'))
+#     bold = wb.add_format({'bold': True})
+#     ws = wb.add_worksheet()
+#     # write header
+#     ws.write('A1', 'Student')
+#     ws.write('B1', 'Time', bold)
+#     ws.write('C1', 'Prop', bold)
+#     ws.write('D1', 'Value', bold)
+#     start_row = 0
+#     for csv_file in sorted(csv_files):
+#         mat = SSCENE1_SEQ_CSV_RE.match(csv_file)
+#         if mat is None:
+#             raise Exception("no match %s" % csv_file)
+#         student = mat.group(1)
+#         ws_data = read_csv(os.path.join(path, csv_file))
+#         for (row_num, row_data) in ws_data:
+#             ws.write('A%d' % (row_num + start_row), student)
+#             ws.write('B%d' % (row_num + start_row), row_data['time'])
+#             ws.write('C%d' % (row_num + start_row), row_data['prop'])
+#             ws.write('D%d' % (row_num + start_row), row_data['value'])
+#         start_row += len(ws_data) + 1
+#     wb.close()
 
 
 def mk_analyzed_seq_excel_file(path, csv_files):
@@ -307,48 +317,48 @@ def mk_analyzed_seq_excel_file(path, csv_files):
     wb.close()
 
 def mk_excel_files(path, file_names):
-    scene1_seq_csv_files = []
+    # scene1_seq_csv_files = []
     scene1_seq_analyzed_csv_files = []
     for file_name in file_names:
         # print(file_name)
-        if SSCENE1_SEQ_CSV_RE.match(file_name):
-            scene1_seq_csv_files.append(file_name)
-        elif SSCENE1_SEQ_ANALYZED_RE.match(file_name):
+        # if SSCENE1_SEQ_CSV_RE.match(file_name):
+        #     scene1_seq_csv_files.append(file_name)
+        if SSCENE1_SEQ_ANALYZED_RE.match(file_name):
             scene1_seq_analyzed_csv_files.append(file_name)
-
-    mk_scene1_excel_file(path, scene1_seq_csv_files)
-    # mk_scene1_excel_file(path, scene1_seq_simplified_csv_files)
+    # print(scene1_seq_csv_files)
+    # print(scene1_seq_analyzed_csv_files)
+    # mk_scene1_excel_file(path, scene1_seq_csv_files)
     mk_analyzed_seq_excel_file(path, scene1_seq_analyzed_csv_files)
 
 
 def process_file(path, base_name):
-    orig_file_name = "%s.TED_tutor_state.json" % base_name
-    # print(orig_file_name)
-    sn = 'SScene1_seq'
+    tutor_state_file_name = "%s.tutor_state.json" % base_name
+    sscene1_file_name = "%s.SScene1_1.json" % base_name
+
+    print(orig_file_name)
+
     orig_file_path = os.path.join(path, orig_file_name)
     obj = json.load(open(orig_file_path, "r"))
-    sscene1_seq = obj.get('scene', {}).get('SScene1', {}).get('$seq', None)
-    module_seq = obj.get('module', {}).get('EFMod_TEDInstr', {}).get('$seq', None)
+
+    sceneKey1 = 'scene'
+    sceneKey2 = 'sceneState'
+    sn = 'SScene1_seq'
+
+    sscene1_seq = obj.get(sceneKey, {}).get('SScene1', {}).get('$seq', None)
     if sscene1_seq is None:
         raise Exception('Error no SScene1.$seq in %s' % orig_file_name)
-    if module_seq is None:
-        raise Exception('Error no module.EFMOD_TEDInstr.$seq in %s' % orig_file_name)
-    simplified_json_path = os.path.join(path, "%s.TED_tutor_state.simplified.json" % base_name)
-    json_file_path = os.path.join(path, "%s.%s.json" % (base_name, sn))
+    # json_file_path = os.path.join(path, "%s.%s.json" % (base_name, sn))
     csv_file_path = os.path.join(path, "%s.%s.csv" % (base_name, sn))
     csv_simplified_path = os.path.join(path, "%s.%s.simplified.csv" % (base_name, sn))
     csv_simplified_analyzed_path = os.path.join(path, "%s.%s.simplified_csv.analyzed.csv" % (base_name, sn))
-    merged_seqs_path = os.path.join(path, "%s.seqs_merged.csv" % base_name)
-    # print(csv_file_path)
+    print(csv_file_path)
+    print(csv_simplified_path)
+    print(csv_simplified_analyzed_path)
     # dump_json(sscene1_seq, json_file_path)
     # dump_csv(sscene1_seq, csv_file_path)
-    # print(csv_simplified_path)
-    # return
     # dump_csv_simplified(sscene1_seq, csv_simplified_path)
     # analyze_simplified_csv(csv_simplified_path, csv_simplified_analyzed_path)
     # dump_simplified_json(sscene1_seq, module_seq, simplified_json_path)
-    # print(merged_seqs_path)
-    # merge_seqs(sscene1_seq, module_seq, merged_seqs_path)
     # print(only_seq_file_path)
 
 def main(path):
@@ -357,10 +367,10 @@ def main(path):
             mat = FILE_NAME_RE.match(file_name)
             if mat:
                 base_name = mat.group(1)
-                # print(base_name)
-                process_file(path, base_name)
+                print(base_name)
+                # process_file(path, base_name)
                 # break
-        mk_excel_files(path, file_names)           
+        # mk_excel_files(path, file_names)          
         break
 
 
